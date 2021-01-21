@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>MICIP PowerBI Attempt | Slicers</title>
+
+    <link rel="stylesheet" type="text/css" href="./slicers.css"></link>
+
+    <script src="../powerbi/powerbi.min.js" type="text/javascript"></script>
+    <script src="../embedding.js" type="text/javascript"></script>
+    <script src="./slicers.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <h1>
+      Slicers
+    </h1>
+
+    <a href="../filters/filters.html">Navigate to the filter issue...</a>
+
+    <p>
+      This document demonstrates how I'm trying to read slicers.
+    </p>
+    
+    <div id="reportContainer">
+
+    </div>
+
+    <div>
+      <label>Before you do anything, please provide the access token for the PowerBI client:</label>
+      <input id="accessToken" />
+    </div>
+
+    <p>
+      When this report is embedded, I listen to the dataSelected event.
+    </p>
+
+    <p>
+      I've found that some slicers trigger that event but some don't. For example, on this
+      report, the Granularity slicer does trigger it, but the Filter on Grade slicer does
+      not. I need a way to listen for when any slicer in the report was changed by the user.
+    </p>
+
+    <div>
+      <p>
+        When you click this, the report will embed and a listener will be created for listening
+        to when the user changes any slicer. Whenever a slicer is changed, you should see a console.log
+        print that says the event fired. However, I'm finding that not every slicer does this, as I
+        mentioned earlier.
+      </p>
+      <button onclick="slicers.setupEmbed()">Embed</button>
+    </div>
+
+  </body>
+</html>

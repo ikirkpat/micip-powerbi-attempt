@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>MICIP PowerBI Attempt | Filters</title>
+
+    <link rel="stylesheet" type="text/css" href="./filters.css"></link>
+
+    <script src="../powerbi/powerbi.min.js" type="text/javascript"></script>
+    <script src="../embedding.js" type="text/javascript"></script>
+    <script src="./filters.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <h1>
+      Filters
+    </h1>
+
+    <a href="../slicers/slicers.html">Navigate to the slicer issue...</a>
+
+    <p>
+      This document demonstrates how I'm trying to set filters.
+    </p>
+    
+    <div id="reportContainer">
+
+    </div>
+
+    <div>
+      <label>Before you do anything, please provide the access token for the PowerBI client:</label>
+      <input id="accessToken" />
+    </div>
+
+    <p>
+      There are two different ways I've been trying to set filters. Each button below corresponds
+      to one of those methods. Each one will print the filters after it expects them to be applied.
+    </p>
+
+    <div class="embed__container">
+      <div class="embed__method">
+        <p>
+          Method 1: send initial filters into the configuration when I embed reports.
+        </p>
+        <button id="reEmbed" onclick="filters.tryEmbedUsingInitialFilters()">
+          Embed using this method
+        </button>
+      </div>
+
+      <div class="embed__method">
+        <p>
+          Method 2: Don't send any filters in initially to the report embed. Instead,
+          when it finishes embedding, call 'setFilters' on the report.
+        </p>
+        <button id="reEmbed" onclick="filters.tryEmbedUsingSetFiltersMethod()">
+          Embed using this method
+        </button>
+      </div>
+    </div>
+
+  </body>
+</html>
